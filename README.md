@@ -23,24 +23,24 @@
 <br />
 <div align="center">
 <!--
-  <a href="https://github.com/matteo-bastico/SkeletonRNN">
+  <a href="https://github.com/matteo-bastico/Multisensor-PIT">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>-->
 
-<h3 align="center">SkeletonRNN</h3>
+<h3 align="center">Multisensor-PIT</h3>
 
   <p align="center">
-    SkeletonRNN is a variable length custom Recurrent Deep Neural Network to estimate miss or wrongly detected 3D skeleton joints.  
+    Continuous Person Identification and Tracking in Healthcare by Integrating Accelerometer Data and 3D Skeletons
     <br />
-    <a href="https://github.com/matteo-bastico/SkeletonRNN"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/matteo-bastico/Multisensor-PIT"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <!--
-    <a href="https://github.com/matteo-bastico/SkeletonRNN">View Demo</a>
+    <a href="https://github.com/matteo-bastico/Multisensor-PIT">View Demo</a>
     · -->
-    <a href="https://github.com/matteo-bastico/SkeletonRNN/issues">Report Bug</a>
+    <a href="https://github.com/matteo-bastico/Multisensor-PIT/issues">Report Bug</a>
     ·
-    <a href="https://github.com/matteo-bastico/SkeletonRNN/issues">Request Feature</a>
+    <a href="https://github.com/matteo-bastico/Multisensor-PIT/issues">Request Feature</a>
   </p>
 </div>
 
@@ -79,20 +79,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The extraction of 2D or 3D skeletons from images
-is a well-known procedure to perform data anonymization. 
-The skeleton estimation has been shown to be sometimes 
-disordered or not available and can provide wrong human 
-identification. Indeed, many points are likely to miss 
-causing issues in related tasks. 
-We present here the Deep Learning architecture proposed in ["Continuous Person Identification and Tracking in Healthcare by Integrating Accelerometer Data and Deep Learning Filled 3D Skeletons"](https://example.com/)
-to estimate missing 3D skeleton joints. 
-In SkeletonRNN, the Long Short-Term Memory (LSTM) cells are modified such that the RNN hidden states are N x h matrices
-where N is the number of joints per skeleton and h is the hidden state size.
-In order to decode such hidden states into the prediction of the 3D skeleton joints for the next instance, 
-a convolutinal decoder is introduced.
-To overcome the issue of missing points in the input data, starting from the second RNN iteration, 
-we introduce an input refinement module.
+
 
 <p align="center">
     <img height=300px src="images/architecture.png">
@@ -132,13 +119,13 @@ Our released implementation is tested on:
 
 * Create and lunch conda environment
   ```sh
-  conda create -n SkeletonRNN python=3.9
-  conda activate SkeletonRNN
+  conda create -n Multisensor-PIT python=3.9
+  conda activate Multisensor-PIT
   ```
 ### Installation
 * Clone project
    ```sh
-  git clone https://github.com/matteo-bastico/SkeletonRNN.git
+  git clone https://github.com/matteo-bastico/Multisensor-PIT.git
   ```
 * Install dependencies
     ```sh
@@ -227,7 +214,7 @@ Note: The GPU is automatically detected for testing.
 - [ ] Feature 3
     - [ ] Nested Feature-->
 
-See the [open issues](https://github.com/matteo-bastico/SkeletonRNN/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/matteo-bastico/Multisensor-PIT/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -263,7 +250,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Matteo Bastico - [@matteobastico](https://twitter.com/matteobastico) - matteo.bastico@gmail.com
 
-Project Link: [https://github.com/matteo-bastico/SkeletonRNN](https://github.com/matteo-bastico/SkeletonRNN)
+Project Link: [https://github.com/matteo-bastico/Multisensor-PIT](https://github.com/matteo-bastico/Multisensor-PIT)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -281,15 +268,15 @@ Telecomunicación, Universidad Politécnica de Madrid, 28040 Madrid, Spain (e-ma
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/matteo-bastico/SkeletonRNN.svg?style=for-the-badge
-[contributors-url]: https://github.com/matteo-bastico/SkeletonRNN/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/matteo-bastico/SkeletonRNN.svg?style=for-the-badge
-[forks-url]: https://github.com/matteo-bastico/SkeletonRNN/network/members
-[stars-shield]: https://img.shields.io/github/stars/matteo-bastico/SkeletonRNN.svg?style=for-the-badge
-[stars-url]: https://github.com/matteo-bastico/SkeletonRNN/stargazers
-[issues-shield]: https://img.shields.io/github/issues/matteo-bastico/SkeletonRNN.svg?style=for-the-badge
-[issues-url]: https://github.com/matteo-bastico/SkeletonRNN/issues
-[license-shield]: https://img.shields.io/github/license/matteo-bastico/SkeletonRNN.svg?style=for-the-badge
-[license-url]: https://github.com/matteo-bastico/SkeletonRNN/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/matteo-bastico/Multisensor-PIT.svg?style=for-the-badge
+[contributors-url]: https://github.com/matteo-bastico/Multisensor-PIT/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/matteo-bastico/Multisensor-PIT.svg?style=for-the-badge
+[forks-url]: https://github.com/matteo-bastico/Multisensor-PIT/network/members
+[stars-shield]: https://img.shields.io/github/stars/matteo-bastico/Multisensor-PIT.svg?style=for-the-badge
+[stars-url]: https://github.com/matteo-bastico/Multisensor-PIT/stargazers
+[issues-shield]: https://img.shields.io/github/issues/matteo-bastico/Multisensor-PIT.svg?style=for-the-badge
+[issues-url]: https://github.com/matteo-bastico/Multisensor-PIT/issues
+[license-shield]: https://img.shields.io/github/license/matteo-bastico/Multisensor-PIT.svg?style=for-the-badge
+[license-url]: https://github.com/matteo-bastico/Multisensor-PIT/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/matteo-bastico/
