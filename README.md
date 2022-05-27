@@ -144,26 +144,26 @@ Our released implementation is tested on:
 ### Dataset
 
 The complete dataset for PIT can be downloaded from https://drive.upm.es/s/3zgeHKhlbWYcow1.
-After downloading, you will get a data structure as follows:
+After downloading and extracting the file into the Data folder, you will get a data structure as follows:
 ```sh
   Data
-  ├── skeleton_prediction		# Dataset for skeleton prediction training and testing
+  ├── skeleton_prediction	# Dataset for skeleton prediction training and testing
   │   ├── test   			# Test Dataset
-  │   │   ├── examples.npy		# 259 sequences of skeletons with missing points
-  │   │   └── labels.npy		# Ground-Truth
+  │   │   ├── examples.npy	# 259 sequences of skeletons with missing points
+  │   │   └── labels.npy	# Ground-Truth
   │   └── train			# Train Dataset
-  │       └── examples.npy		# 1035 sequences of complete skeletons            
+  │       └── examples.npy	# 1035 sequences of complete skeletons            
   └── reidentification		# Dataset for PIT
       ├── AE_A			# All subfolders have the same structure
       │   ├── acceleration.txt	# File with bracelets data
-      │   ├── skeleton.txt		# File with skeleton data
+      │   ├── skeleton.txt	# File with skeleton data
       │   └── video 		# Video as ground-truth
       ├── CR	
       ├── LE_A	
       ├── S_AE2	
-      ├── case2_1			# All "case.." subfolders have the same structure
-      │   ├── accel.json		# File with bracelets data
-      │   ├── skeleton.json		# File with skeleton data
+      ├── case2_1		# All "case.." subfolders have the same structure
+      │   ├── accel.json	# File with bracelets data
+      │   ├── skeleton.json	# File with skeleton data
       │   └── video 		# Video as ground-truth
       ├── case3_2	
       ├── case5_1	
@@ -184,6 +184,27 @@ After downloading, you will get a data structure as follows:
       ├── case4_2	
       └── case6
   ```
+
+Skeleton_prediction contains the training and testing data for our [SkeletonRNN](https://github.com/matteo-bastico/SkeletonRNN).
+PIT data are provided, divided in case studies, in .json or .txt files. The contained data structure is the same and to open them use:
+
+```sh
+  with open("skeleton.json", "r") as fs:
+      skeleton_list = json.load(fs)
+  with open("accel.json", "r") as fs:
+      accel_list = json.load(fs)
+  ```
+or 
+```sh
+  with open("skeleton.txt", "rb") as fs:
+      skeleton_list = pickle.load(fs)
+  with open("acceleration.txt", "rb") as fs:
+      accel_list = pickle.load(fs)
+  ```
+The accelerations are stored in a list of Dicts. Each of them is structured as {'_id', 'x', 'y', 'z', 'timestamp', 'id'} where x,y and z are the accelerations in m/s^2 in the coordinated and id is the smart band identifier. 
+
+The skeletons are stored in a list of Dicts. Each of them is structured as {'_id', 'skeletons':{<id>: {'confidences', 'joints', 'joints3D'}, ...} 'timestamp'} where in 'skeletons' another Dict is stored in which each key correspond to the identifier of the skeleton and the values are joints, joints3D and their confidences. The timestamp is common for all the skeletons of one frame.
+
 ### Training
 
 To replicate best results of the paper
