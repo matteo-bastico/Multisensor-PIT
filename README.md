@@ -148,7 +148,7 @@ After downloading and extracting the file into the Data folder, you will get a d
 ```sh
   Data
   ├── skeleton_prediction	# Dataset for skeleton prediction training and testing
-  │   ├── test   			# Test Dataset
+  │   ├── test   		# Test Dataset
   │   │   ├── examples.npy	# 259 sequences of skeletons with missing points
   │   │   └── labels.npy	# Ground-Truth
   │   └── train			# Train Dataset
@@ -201,9 +201,9 @@ or
   with open("acceleration.txt", "rb") as fs:
       accel_list = pickle.load(fs)
   ```
-The accelerations are stored in a list of Dicts. Each of them is structured as {'_id', 'x', 'y', 'z', 'timestamp', 'id'} where x,y and z are the accelerations in m/s^2 in the coordinated and id is the smart band identifier. 
+The accelerations are stored in a list of Dicts. Each of them is structured as {'_id', 'x', 'y', 'z', 'timestamp', 'id'} where x,y and z are the accelerations in m/s^2 in the coordinates and id is the smart band identifier. 
 
-The skeletons are stored in a list of Dicts. Each of them is structured as {'_id', 'skeletons':{<id>: {'confidences', 'joints', 'joints3D'}, ...} 'timestamp'} where in 'skeletons' another Dict is stored in which each key correspond to the identifier of the skeleton and the values are joints, joints3D and their confidences. The timestamp is common for all the skeletons of one frame.
+The skeletons are stored in a list of Dicts. Each of them is structured as {'_id', 'skeletons':{'<id>': {'confidences', 'joints', 'joints3D'}, ...} 'timestamp'} where in 'skeletons' another Dict is stored in which each key correspond to the identifier of the skeleton and the values are joints, joints3D and their confidences. The timestamp is common for all the skeletons of one frame.
 
 ### Training
 
