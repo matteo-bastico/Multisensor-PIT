@@ -110,8 +110,6 @@ Our released implementation is tested on:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -145,25 +143,47 @@ Our released implementation is tested on:
 
 ### Dataset
 
-The train set contains 1035 sequences of 
-complete skeletons which are augmented during 
-the training to simulate loss of joints. The test 
-set contains 259 sequences of skeletons 
-with missing points and the ground-truth is 
-provided. Both dataset are in the Data folder.
-
-Data are stored in .npy files. 
-Each of them contains a list of skeleton 
-sequences saved as Numpy array 
-with shape (L, N, D) where L is the sequence 
-length, N is the number of skeleton 
-points (18 for Intel RealSense) and D is the 
-dimensionality (3). In the testing dataset 
-missing points are represented with [-1, -1, -1]. 
-Training skeletons are all complete, 
-i.e. without missing points. 
-The original dataset also for Person Identification and Tracking (PIT) can be downloaded from https://drive.upm.es/s/3zgeHKhlbWYcow1.
-
+The complete dataset for PIT can be downloaded from https://drive.upm.es/s/3zgeHKhlbWYcow1.
+After downloading, you will get a data structure as follows:
+```sh
+  Data
+  ├── skeleton_prediction		# Dataset for skeleton prediction training and testing
+  │   ├── test   			# Test Dataset
+  │   │   ├── examples.npy		# 259 sequences of skeletons with missing points
+  │   │   └── labels.npy		# Ground-Truth
+  │   └── train			# Train Dataset
+  │       └── examples.npy		# 1035 sequences of complete skeletons            
+  └── reidentification		# Dataset for PIT
+      ├── AE_A			# All subfolders have the same structure
+      │   ├── acceleration.txt	# File with bracelets data
+      │   ├── skeleton.txt		# File with skeleton data
+      │   └── video 		# Video as ground-truth
+      ├── CR	
+      ├── LE_A	
+      ├── S_AE2	
+      ├── case2_1			# All "case.." subfolders have the same structure
+      │   ├── accel.json		# File with bracelets data
+      │   ├── skeleton.json		# File with skeleton data
+      │   └── video 		# Video as ground-truth
+      ├── case3_2	
+      ├── case5_1	
+      ├── case7
+      ├── AE_AE	
+      ├── CR_E
+      ├── SIT	
+      ├── case1_1	
+      ├── case2_2	
+      ├── case4_1	
+      ├── case5_2	
+      ├── case8
+      ├── AE_A_B	
+      ├── DE_B	
+      ├── S_AE	
+      ├── case1_2	
+      ├── case3_1	
+      ├── case4_2	
+      └── case6
+  ```
 ### Training
 
 To replicate best results of the paper
