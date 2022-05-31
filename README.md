@@ -248,14 +248,36 @@ Function header:
                        camera_angle=0, similarity_weight=0.7, verbose=0)
   ```
 
+Parameters:
+* skeletons_frames: Skeletons data in the format of our dataset
+* accelerations_dict: Acceleration data in the format of our dataset
+* camera: Camera used to record: "Intel" or "Kinect" (Default for our data is Intel)
+* acceleration_smooth_window: Acceleration smoothing window for noise removal (Default: 35)
+* acceleration_smooth_poly: Acceleration smoothing poly for noise removal (Default: 1)
+* skeleton_min_duration: Minimum duration in seconds for a skeleton to be considered valid (Default: 5, NOTE: we suggest to use at least half of the chuck size) 
+* skeleton_smooth_filter: Skeleton smoothing filter for noise removal, "savgol" or "weiner" (Default: "savgol")
+* skeleton_smooth_window: Skeleton smoothing window for noise removal (Default: 7)
+* skeleton_smooth_poly: Skeleton smoothing poly for noise removal (Default: 1)
+* direction_smooth_filter: Direction smoothing filter for noise removal, "savgol" or "weiner" (Default: "savgol")
+* direction_smooth_window: Direction smoothing window for noise removal (Default: 5)
+* direction_smooth_poly: Direction smoothing poly for noise removal (Default: 1)
+* conversion_smooth_window: Smoothing window for conversion of skeletons positions to accelerations (Default: 3)
+* conversion_smooth_poly: Smoothing poly for conversion of skeletons positions to accelerations (Default: 1)
+* camera_angle: Camera rotation angle on the y-axis (Default: 0)
+* similarity_weight: Weight for similarities measures balance of pure and derivative (see paper, Default: 0.7)
+* verbose: Verbose for console logs if >=1 (Default: 0)
+
+Return: List of associations Dicts structured like {'ts_start': initial timestamp of association, 'ts_end': final timestamp of association, 'skeleton_id': skeleton identifier, 'bracelet_id': accelerometer identifier}
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] CUDA distributed implementation
 - [ ] Skeletons graphical visualization
+- [ ] Testing with other camera
+- [ ] Implementation of direct test on .txt data
 <!--
 - [ ] Feature 2
 - [ ] Feature 3
