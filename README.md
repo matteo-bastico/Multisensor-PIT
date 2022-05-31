@@ -203,7 +203,7 @@ or
   ```
 The accelerations are stored in a list of Dicts. Each of them is structured as {'_id', 'x', 'y', 'z', 'timestamp', 'id'} where x,y and z are the accelerations in m/s^2 in the coordinates and id is the smart band identifier. 
 
-The skeletons are stored in a list of Dicts. Each of them is structured as {'_id', 'skeletons':{'<id>': {'confidences', 'joints', 'joints3D'}, ...} 'timestamp'} where in 'skeletons' another Dict is stored in which each key correspond to the identifier of the skeleton and the values are joints, joints3D and their confidences. The timestamp is common for all the skeletons of one frame.
+The skeletons are stored in a list of Dicts. Each of them is structured as {'_id', 'skeletons':{'id': {'confidences', 'joints', 'joints3D'},...}, 'timestamp'} where in 'skeletons' another Dict is stored in which each key correspond to the identifier of the skeleton and the values are joints, joints3D and their confidences. The timestamp is common for all the skeletons of one frame.
 
 ### Training
 
