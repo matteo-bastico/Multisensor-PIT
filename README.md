@@ -100,13 +100,6 @@ Our paper is available in [IEEE Sensors](https://www.example.com) or
 Our released implementation is tested on:
 * Ubuntu 20.04 / macOS 11.5
 * Python 3.9.7
-* Pytorch 1.10 / torchvison 0.11.1
-* NVIDIA CUDA 11.3
-* TensorboardX 2.5
-* Scikit-learn 1.0.1
-* SciPy 1.7.2
-* tqdm 4.64
-* 1x NVIDIA GeForce GTX 1080 Ti
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -233,6 +226,28 @@ Parameters:
 * -ca : Camera rotation angle on the y-axis (Default: 0)
 * -sw : Weight for similarities measures balance of pure and derivative (see paper, Default: 0.7)
 * -v : Verbose for console logs if >=1 (Default: 0)
+
+### Implementation
+
+To include our algorithm on your code 
+
+```sh
+  from mpit.algorithms import identify_and_track
+  ```
+
+Function header:
+
+```
+  identify_and_track(skeletons_frames, accelerations_dict, camera="Intel",
+                       acceleration_smooth_window=35, acceleration_smooth_poly=1,
+                       skeleton_min_duration=5, skeleton_smooth_filter="savgol",
+                       skeleton_smooth_window=7, skeleton_smooth_poly=1,
+                       direction_smooth_filter="savgol",
+                       direction_smooth_window=5, direction_smooth_poly=1,
+                       conversion_smooth_window=3, conversion_smooth_poly=1,
+                       camera_angle=0, similarity_weight=0.7, verbose=0)
+  ```
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
