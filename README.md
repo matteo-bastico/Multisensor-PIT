@@ -239,13 +239,13 @@ Function header:
 
 ```
   identify_and_track(skeletons_frames, accelerations_dict, camera="Intel",
-                       acceleration_smooth_window=35, acceleration_smooth_poly=1,
-                       skeleton_min_duration=5, skeleton_smooth_filter="savgol",
-                       skeleton_smooth_window=7, skeleton_smooth_poly=1,
-                       direction_smooth_filter="savgol",
-                       direction_smooth_window=5, direction_smooth_poly=1,
-                       conversion_smooth_window=3, conversion_smooth_poly=1,
-                       camera_angle=0, similarity_weight=0.7, verbose=0)
+                     acceleration_smooth_window=35, acceleration_smooth_poly=1,
+                     skeleton_min_duration=5, skeleton_smooth_filter="savgol",
+                     skeleton_smooth_window=7, skeleton_smooth_poly=1,
+                     direction_smooth_filter="savgol",
+                     direction_smooth_window=5, direction_smooth_poly=1,
+                     conversion_smooth_window=3, conversion_smooth_poly=1,
+                     camera_angle=0, similarity_weight=0.7, verbose=0)
   ```
 
 Parameters:
