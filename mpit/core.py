@@ -195,7 +195,6 @@ def do_association(rotated_accel, accel_bracelet, weight, verbose=1):
     np_mse = df_mse.to_numpy(dtype=float)
     np_mse = np_mse[:, np.logical_and(~np.isnan(np.array(np_mse)).any(axis=0),
                                       ~np.isinf(np.array(np_mse)).any(axis=0))]
-    print(df_mse)
     # If array is empty everything was NaN -> probably error in bracelet timestamps
     if np_mse.size > 0:
         # Hungarian

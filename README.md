@@ -117,21 +117,18 @@ Our released implementation is tested on:
 
 * Create and lunch conda environment
   ```sh
-  conda create -n Multisensor-PIT python=3.9
-  conda activate Multisensor-PIT
+  conda create -n mpit python=3.9
+  conda activate mpit
   ```
 ### Installation
 * Clone project
    ```sh
   git clone https://github.com/matteo-bastico/Multisensor-PIT.git
+  cd Multisensor-PIT
   ```
-* Install dependencies
+* Install package for multisensor PIT
     ```sh
-  pip install -r requirements.txt
-  ```
-  Note: for Pytorch CUDA installation follow https://pytorch.org/get-started/locally/. Example with CUDA 11.3:
-  ```sh
-  conda install pytorch==1.10 torchvision=0.11 torchaudio cudatoolkit=11.3 -c pytorch
+  pip install --upgrade --use-feature=in-tree-build .
   ```
   
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -205,11 +202,11 @@ The accelerations are stored in a list of Dicts. Each of them is structured as {
 
 The skeletons are stored in a list of Dicts. Each of them is structured as {'_id', 'skeletons':{'id': {'confidences', 'joints', 'joints3D'},...}, 'timestamp'} where in 'skeletons' another Dict is stored in which each key correspond to the identifier of the skeleton and the values are joints, joints3D and their confidences. The timestamp is common for all the skeletons of one frame.
 
-### Training
+### Testing
 
 To replicate best results of the paper
 ```sh
-  python train.py -d "Data/train/examples.npy" -e 1000 -i 18 3 -hs 1024 -lr 1e-6 1e-5 -tb 8 -eb 8 -s 100
+  python tests/test_mpit.py 
   ```
 
 Parameters:

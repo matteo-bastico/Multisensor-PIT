@@ -11,5 +11,7 @@ setup(
     license='MIT',
     install_requires=['scipy>=1.7.2',
                       'numpy>=1.21.4',
-                      'similaritymeasures>=0.4.4',]
+                      'similaritymeasures>=0.4.4',
+                      'matplotlib>=3.5.2',
+                      'pandas>=1.4.2']
 )

@@ -11,7 +11,7 @@ def identify_and_track(skeletons_frames, accelerations_dict, camera="Intel",
                        skeleton_smooth_window=7, skeleton_smooth_poly=1,
                        direction_smooth_filter="savgol",
                        direction_smooth_window=5, direction_smooth_poly=1,
-                       conversion_smoothing_window=3, conversion_smoothing_poly=1,
+                       conversion_smooth_window=3, conversion_smooth_poly=1,
                        camera_angle=0, similarity_weight=0.7, verbose=0):
     assert camera == "Intel" or camera == "Kinect", "Type of camera not valid (Intel or Kinect)"
     # Select points
@@ -41,8 +41,8 @@ def identify_and_track(skeletons_frames, accelerations_dict, camera="Intel",
                                                                      poly=direction_smooth_poly,
                                                                      verbose=verbose)
     skel_accel = conversion.get_skeletons_point_accelerations(wrist_points,
-                                                              window=conversion_smoothing_window,
-                                                              poly=conversion_smoothing_poly,
+                                                              window=conversion_smooth_window,
+                                                              poly=conversion_smooth_poly,
                                                               verbose=verbose)
     skel_accel_gravity = core.add_gravity_to_skeletons_accelerations(skel_accel, camera_angle, verbose=verbose)
     skel_accel_rotated = core.get_skeleton_accelerations_rotated(skel_accel_gravity, directions, verbose=verbose)
