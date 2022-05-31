@@ -204,10 +204,15 @@ The skeletons are stored in a list of Dicts. Each of them is structured as {'_id
 
 ### Testing
 
-To replicate best results of the paper
+To test the Multisensor-PIT algorithm run
 ```sh
-  python tests/test_mpit.py 
+  python tests/test_mpit.py -s Data/reidentification/case1_1/skeleton.json -a Data/reidentification/case1_1/accel.json
   ```
+The desire output (with default parameters) is the following image:
+
+<p align="center">
+    <img height=300px src="images/example.png">
+</p>
 
 Parameters:
 * -d : Training data path
