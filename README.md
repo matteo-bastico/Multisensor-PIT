@@ -79,7 +79,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+We present here the Multisensor Person Identification and Tracking (PIT) algorithm proposed in ["Continuous Person Identification and Tracking in Healthcare by Integrating Accelerometer Data and Deep Learning Filled 3D Skeletons"](https://example.com/)
+to associate and track 3D skeleton data and on-wrist accelerometer. 
 
 <p align="center">
     <img height=300px src="images/architecture.png">
