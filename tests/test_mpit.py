@@ -152,5 +152,6 @@ if __name__ == "__main__":
                 plt.text(association['ts_start'], (0.8-i)*y_max,
                          str(association['skeleton_id']) + "->" + str(association['bracelet_id']), fontsize=8)
                 i += 0.1
+    plt.title("Skeletons x locations over time with associated bracelets")
     plt.legend(loc='lower left')
     plt.show()

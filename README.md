@@ -215,37 +215,26 @@ The desire output (with default parameters) is the following image:
 </p>
 
 Parameters:
-* -d : Training data path
-* -e : Number of training epochs
-* -i : Input format (N:Number of joints, D:Dimensions)
-* -hs : LSTM hidden layer size. Options: 256, 512, 1024
-* -lr : One-Cycle policy learning rates (max_lr, min_lr)
-* -tb : Test batch size
-* -eb : Evaluation batch size
-* -s : Every how many epochs save checkpoint of the model
-
-The results of the training (args, tensorboard summary and checkpoints) are saved in the runs folder.
-Note: The GPU is automatically detected for training. 
-
-### Testing 
-
-```sh
-  python test.py -d "Data/test/examples.npy" -l "Data/test/labels.npy" -i 18 3 -hs 1024 -tb 8 -chk path_to_last_chk
-  ```
-
-Parameters:
-* -d : Testing data path
-* -l : Ground-truth data path
-* -i : Input format (N:Number of joints, D:Dimensions)
-* -hs : LSTM hidden layer size. Options: 256, 512, 1024
-* -tb : Test batch size
-* -chk : Path to checkpoint to test
-
-Note: The GPU is automatically detected for testing. 
+* -s : Skeletons data path in the format of our dataset
+* -a : Acceleration data path in the format of our dataset
+* -w : Chuck size in seconds to split the entire data sequence
+* -c : Camera used to record: "Intel" or "Kinect" (Default for our data is Intel)
+* -asw : Acceleration smoothing window for noise removal (Default: 35)
+* -asp : Acceleration smoothing poly for noise removal (Default: 1)
+* -smd : Minimum duration in seconds for a skeleton to be considered valid (Default: 5, NOTE: we suggest to use at least half of the chuck size) 
+* -ssf : Skeleton smoothing filter for noise removal, "savgol" or "weiner" (Default: "savgol")
+* -ssw : Skeleton smoothing window for noise removal (Default: 7)
+* -ssp : Skeleton smoothing poly for noise removal (Default: 1)
+* -dsf : Direction smoothing filter for noise removal, "savgol" or "weiner" (Default: "savgol")
+* -dsw : Direction smoothing window for noise removal (Default: 5)
+* -dsp : Direction smoothing poly for noise removal (Default: 1)
+* -csw : Smoothing window for conversion of skeletons positions to accelerations (Default: 3)
+* -csp : Smoothing poly for conversion of skeletons positions to accelerations (Default: 1)
+* -ca : Camera rotation angle on the y-axis (Default: 0)
+* -sw : Weight for similarities measures balance of pure and derivative (see paper, Default: 0.7)
+* -v : Verbose for console logs if >=1 (Default: 0)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
