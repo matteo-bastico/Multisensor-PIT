@@ -65,8 +65,8 @@
     <li><a href="#usage">Usage</a>
       <ul>
         <li><a href="#dataset">Dataset</a></li>
-        <li><a href="#training">Training</a></li>
         <li><a href="#testing">Testing</a></li>
+        <li><a href="#implementation">Implementation</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
